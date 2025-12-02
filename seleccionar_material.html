@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EcoLink - Seleccionar Material</title>
+
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #dfffee;
+        font-family: 'Poppins', sans-serif;
+        overflow: hidden;
+    }
+
+    .phone {
+        width: 360px;
+        height: 640px;
+        background: #ffffff;
+        border-radius: 28px;
+        overflow: hidden;
+        box-shadow: 0 12px 28px rgba(0,0,0,0.22);
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+
+    .notch {
+        width: 160px;
+        height: 26px;
+        background: #111;
+        border-radius: 0 0 16px 16px;
+        margin: 0 auto;
+    }
+
+    .header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 18px;
+        background: #f6fff9;
+        color: #0b5a36;
+        font-weight: 600;
+        font-size: 1.05rem;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+
+    .back-btn {
+        font-size: 1.3rem;
+        cursor: pointer;
+        color: #0b5a36;
+    }
+
+    .content {
+        flex: 1;
+        overflow-y: auto;
+        padding: 18px;
+    }
+
+    h2 {
+        color: #0f5132;
+        font-size: 1.2rem;
+        margin-bottom: 14px;
+        text-align: center;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+        margin-top: 10px;
+    }
+
+    .material {
+        padding: 16px;
+        background: #f4fff9;
+        border-radius: 16px;
+        text-align: center;
+        border: 2px solid #c6f5df;
+        cursor: pointer;
+        transition: 0.2s ease;
+    }
+
+    .material.selected {
+        border-color: #2ecc71;
+        background: #e1ffef;
+        box-shadow: 0 0 10px rgba(46,204,113,0.4);
+    }
+
+    .material img {
+        width: 55px;
+        height: 55px;
+        margin-bottom: 10px;
+    }
+
+    .material-name {
+        font-size: 0.95rem;
+        color: #0f5132;
+        font-weight: 600;
+    }
+
+    .btn-bottom {
+        position: absolute;
+        bottom: 16px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 88%;
+        padding: 14px;
+        background: #2ecc71;
+        color: white;
+        text-align: center;
+        border-radius: 14px;
+        font-weight: 600;
+        font-size: 1rem;
+        box-shadow: 0 4px 12px rgba(46,204,113,0.33);
+        cursor: pointer;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="phone">
+
+    <div class="notch"></div>
+
+    <div class="header">
+        <div class="back-btn" onclick="window.location.href='home2.html'">←</div>
+        Seleccionar material
+    </div>
+
+    <div class="content">
+
+        <h2>¿Qué material reciclaste?</h2>
+
+        <div class="grid">
+            <div class="material" data-material="PET">
+                <img src="https://cdn-icons-png.flaticon.com/512/854/854894.png">
+                <div class="material-name">PET</div>
+            </div>
+
+            <div class="material" data-material="Cartón">
+                <img src="https://cdn-icons-png.flaticon.com/512/103/103461.png">
+                <div class="material-name">Cartón</div>
+            </div>
+
+            <div class="material" data-material="Vidrio">
+                <img src="https://cdn-icons-png.flaticon.com/512/2921/2921822.png">
+                <div class="material-name">Vidrio</div>
+            </div>
+
+            <div class="material" data-material="Aluminio">
+                <img src="https://cdn-icons-png.flaticon.com/512/992/992651.png">
+                <div class="material-name">Aluminio</div>
+            </div>
+
+            <div class="material" data-material="Electrónicos">
+                <img src="https://cdn-icons-png.flaticon.com/512/3500/3500833.png">
+                <div class="material-name">Electrónicos</div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="btn-bottom" onclick="continueProcess()">Continuar</div>
+
+</div>
+
+<script>
+    let selectedMaterial = null;
+
+    document.querySelectorAll(".material").forEach(card => {
+        card.addEventListener("click", () => {
+            document.querySelectorAll(".material").forEach(c => c.classList.remove("selected"));
+            card.classList.add("selected");
+            selectedMaterial = card.dataset.material;
+        });
+    });
+
+    function continueProcess() {
+        if (!selectedMaterial) {
+            alert("Selecciona un material para continuar 🙂");
+            return;
+        }
+
+        // Guarda temporalmente la selección (opcional)
+        localStorage.setItem("materialSeleccionado", selectedMaterial);
+
+        // Redirige a la siguiente pantalla del flujo
+        window.location.href = "cantidad_material.html";
+    }
+</script>
+
+</body>
+</html>

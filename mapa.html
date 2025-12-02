@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EcoLink - Mapa</title>
+
+<style>
+    body {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: #dfffee;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .phone {
+        width: 360px;
+        height: 640px;
+        background: #ffffff;
+        border-radius: 28px;
+        overflow: hidden;
+        box-shadow: 0 12px 28px rgba(0,0,0,0.22);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .notch {
+        width: 160px;
+        height: 26px;
+        background: #111;
+        border-radius: 0 0 16px 16px;
+        margin: 0 auto;
+    }
+
+    /* HEADER EDITADO PARA INCLUIR FLECHA */
+    .header {
+        width: 100%;
+        padding: 14px 20px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #0f5132;
+        background: #f4fffa;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .back-btn {
+        font-size: 1.4rem;
+        cursor: pointer;
+    }
+
+    .search {
+        width: 90%;
+        margin: 10px auto;
+        display: flex;
+    }
+
+    .search input {
+        flex: 1;
+        padding: 10px;
+        border-radius: 12px;
+        border: 2px solid #bff3d5;
+        background: #fafffd;
+        font-size: 0.9rem;
+        outline: none;
+    }
+
+    .filters {
+        width: 100%;
+        display: flex;
+        gap: 8px;
+        padding: 0 12px;
+        margin-bottom: 8px;
+    }
+
+    .filter-btn {
+        flex: 1;
+        padding: 6px;
+        border-radius: 12px;
+        background: #eafff1;
+        color: #1b774a;
+        text-align: center;
+        font-size: 0.75rem;
+        border: 1px solid #b6efcf;
+        cursor: pointer;
+    }
+
+    .map {
+        flex: 1;
+        background: url("https://i.imgur.com/6tL6RrO.png");
+        background-size: cover;
+        background-position: center;
+        position: relative;
+    }
+
+    .marker {
+        width: 26px;
+        height: 26px;
+        background: #2ecc71;
+        border-radius: 50%;
+        border: 3px solid white;
+        position: absolute;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+        cursor: pointer;
+    }
+
+    #m1 { top: 30%; left: 40%; }
+    #m2 { top: 55%; left: 65%; }
+    #m3 { top: 70%; left: 25%; }
+
+    .fab {
+        width: 50px;
+        height: 50px;
+        background: #1abc9c;
+        border-radius: 50%;
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 24px;
+        box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+        cursor: pointer;
+    }
+
+</style>
+</head>
+
+<body>
+
+<div class="phone">
+
+    <div class="notch"></div>
+
+    <div class="header">
+        <div class="back-btn" onclick="window.location.href='home2.html'">←</div>
+        Centros de reciclaje
+    </div>
+
+    <div class="search">
+        <input type="text" placeholder="Buscar centro, colonia, calle...">
+    </div>
+
+    <div class="filters">
+        <div class="filter-btn">PET</div>
+        <div class="filter-btn">Cartón</div>
+        <div class="filter-btn">Vidrio</div>
+        <div class="filter-btn">Aluminio</div>
+    </div>
+
+    <div class="map">
+        <div class="marker" id="m1" onclick="window.location.href='detalle_centro.html'"></div>
+        <div class="marker" id="m2" onclick="window.location.href='detalle_centro.html'"></div>
+        <div class="marker" id="m3" onclick="window.location.href='detalle_centro.html'"></div>
+    </div>
+
+    <div class="fab" onclick="window.location.href='listacentros.html'">📍</div>
+
+</div>
+
+</body>
+</html>

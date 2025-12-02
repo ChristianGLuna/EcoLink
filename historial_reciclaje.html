@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EcoLink - Historial de reciclaje</title>
+
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #dfffee;
+        font-family: 'Poppins', sans-serif;
+        overflow: hidden;
+    }
+
+    /* Contenedor de celular */
+    .phone {
+        width: 360px;
+        height: 640px;
+        background: #ffffff;
+        border-radius: 28px;
+        overflow: hidden;
+        box-shadow: 0 12px 28px rgba(0,0,0,0.22);
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Header */
+    .header {
+        padding: 16px 20px;
+        background: #f6fff9;
+        color: #0b5a36;
+        font-weight: 600;
+        font-size: 1.2rem;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .back-btn {
+        font-size: 1.4rem;
+        cursor: pointer;
+    }
+
+    /* Contenido */
+    .content {
+        flex: 1;
+        overflow-y: auto;
+        padding: 16px;
+    }
+
+    /* Tarjeta */
+    .card {
+        background: #f6fff9;
+        border-radius: 16px;
+        border: 1px solid #c6f5df;
+        padding: 14px;
+        margin-bottom: 14px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    }
+
+    .top-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 6px;
+    }
+
+    .material {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #0f5132;
+        font-weight: 600;
+        font-size: 1rem;
+    }
+
+    .material-icon {
+        font-size: 1.6rem;
+    }
+
+    .points {
+        font-size: 1rem;
+        color: #2ecc71;
+        font-weight: 700;
+    }
+
+    .details {
+        font-size: 0.85rem;
+        color: #3d3d3d;
+        margin-top: 6px;
+        line-height: 1.3;
+    }
+
+    .status {
+        font-size: 0.8rem;
+        margin-top: 6px;
+        font-weight: 600;
+    }
+
+    .validado {
+        color: #2ecc71;
+    }
+
+    .pendiente {
+        color: #d69300;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="phone">
+
+    <div class="header">
+        <!-- ✔ Navegación atrás -->
+        <div class="back-btn" onclick="window.location.href='perfil_usuario.html'">←</div>
+        Historial de reciclaje
+    </div>
+
+    <div class="content">
+
+        <!-- Entrega 1 -->
+        <div class="card">
+            <div class="top-row">
+                <div class="material">
+                    <span class="material-icon">🥤</span> PET
+                </div>
+                <div class="points">+6 pts</div>
+            </div>
+
+            <div class="details">
+                Cantidad: 3 kg<br>
+                Centro: Acopio Reforma<br>
+                Fecha: 10 enero 2025 — 4:35 PM
+            </div>
+
+            <div class="status validado">✔ Validado</div>
+        </div>
+
+        <!-- Entrega 2 -->
+        <div class="card">
+            <div class="top-row">
+                <div class="material">
+                    <span class="material-icon">🍾</span> Vidrio
+                </div>
+                <div class="points">+1 pts</div>
+            </div>
+
+            <div class="details">
+                Cantidad: 1 kg<br>
+                Centro: Acopio Plaza Museo<br>
+                Fecha: 08 enero 2025 — 1:12 PM
+            </div>
+
+            <div class="status pendiente">⏳ En validación</div>
+        </div>
+
+        <!-- Entrega 3 -->
+        <div class="card">
+            <div class="top-row">
+                <div class="material">
+                    <span class="material-icon">🪫</span> Electrónicos
+                </div>
+                <div class="points">+10 pts</div>
+            </div>
+
+            <div class="details">
+                2 dispositivos pequeños<br>
+                Centro: Punto Verde Xalapa<br>
+                Fecha: 05 enero 2025 — 10:20 AM
+            </div>
+
+            <div class="status validado">✔ Validado</div>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

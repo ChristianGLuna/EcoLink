@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EcoLink - Detalle de Recompensa</title>
+
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #dfffee;
+        font-family: 'Poppins', sans-serif;
+        overflow: hidden;
+    }
+
+    .phone {
+        width: 360px;
+        height: 640px;
+        background: #ffffff;
+        border-radius: 28px;
+        overflow: hidden;
+        box-shadow: 0 12px 28px rgba(0,0,0,0.22);
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+
+    .header {
+        padding: 16px 20px;
+        background: #f6fff9;
+        color: #0b5a36;
+        font-weight: 600;
+        font-size: 1.2rem;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .back-btn {
+        font-size: 1.4rem;
+        cursor: pointer;
+    }
+
+    .content {
+        flex: 1;
+        overflow-y: auto;
+        padding: 16px 18px 90px;
+    }
+
+    .reward-img {
+        width: 100%;
+        height: 180px;
+        border-radius: 16px;
+        background-size: cover;
+        background-position: center;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        margin-bottom: 14px;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+        color: #0f5132;
+    }
+
+    .cost {
+        font-size: 1rem;
+        color: #2ecc71;
+        font-weight: 700;
+        margin-top: 4px;
+    }
+
+    .level-required {
+        font-size: 0.9rem;
+        color: #1b774a;
+        margin-bottom: 14px;
+    }
+
+    .section-title {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #0f5132;
+        margin-top: 12px;
+        margin-bottom: 6px;
+    }
+
+    .text {
+        font-size: 0.9rem;
+        color: #444;
+        line-height: 1.4;
+    }
+
+    .btn-bottom {
+        position: absolute;
+        bottom: 16px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 88%;
+        padding: 14px;
+        background: #2ecc71;
+        color: white;
+        text-align: center;
+        border-radius: 14px;
+        font-weight: 600;
+        font-size: 1rem;
+        box-shadow: 0 4px 12px rgba(46,204,113,0.33);
+        cursor: pointer;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="phone">
+
+    <div class="header">
+        <!-- ✔ Regresa a recompensas -->
+        <div class="back-btn" onclick="window.location.href='recompensas.html'">←</div>
+        Detalle de recompensa
+    </div>
+
+    <div class="content">
+
+        <div class="reward-img"
+             style="background-image:url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=400');">
+        </div>
+
+        <h2>10% de descuento en cafetería</h2>
+        <div class="cost">Costo: 30 puntos</div>
+        <div class="level-required">Nivel requerido: 🌱 Eco-Iniciante</div>
+
+        <div class="section-title">Descripción</div>
+        <div class="text">
+            Disfruta un 10% de descuento en tu compra dentro de nuestra cafetería aliada.
+            Aplica para bebidas calientes y frías. Válido una vez por usuario.
+        </div>
+
+        <div class="section-title">Beneficio</div>
+        <div class="text">
+            Ideal para quienes reciclan con frecuencia y quieren disfrutar un pequeño premio por su esfuerzo ambiental.
+        </div>
+
+        <div class="section-title">Cómo usarla</div>
+        <div class="text">
+            Tras canjear esta recompensa, se generará un código QR único que podrás mostrar en el comercio.
+        </div>
+
+    </div>
+
+    <!-- ✔ Va a cupon_qr.html -->
+    <div class="btn-bottom" onclick="window.location.href='cupon_qr.html'">
+        Canjear recompensa
+    </div>
+
+</div>
+
+</body>
+</html>

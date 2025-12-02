@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EcoLink - Ajustes</title>
+
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #dfffee;
+        font-family: 'Poppins', sans-serif;
+        overflow: hidden;
+    }
+
+    /* Celular */
+    .phone {
+        width: 360px;
+        height: 640px;
+        background: #ffffff;
+        border-radius: 28px;
+        overflow: hidden;
+        box-shadow: 0 12px 28px rgba(0,0,0,0.22);
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+
+    /* Header */
+    .header {
+        padding: 16px 20px;
+        background: #f6fff9;
+        color: #0b5a36;
+        font-weight: 600;
+        font-size: 1.2rem;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .back-btn {
+        font-size: 1.4rem;
+        cursor: pointer;
+    }
+
+    /* Contenido */
+    .content {
+        flex: 1;
+        overflow-y: auto;
+        padding: 20px 18px 30px;
+    }
+
+    .section-title {
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: #1b774a;
+        margin: 24px 0 8px;
+    }
+
+    .setting-item {
+        padding: 14px 0;
+        border-bottom: 1px solid #e6f6ef;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 1rem;
+        color: #0f5132;
+    }
+
+    .icon {
+        font-size: 1.2rem;
+    }
+
+    /* Switch */
+    .switch {
+        width: 42px;
+        height: 22px;
+        border-radius: 20px;
+        background: #c6f5df;
+        position: relative;
+        transition: 0.3s;
+    }
+
+    .switch-circle {
+        width: 18px;
+        height: 18px;
+        background: white;
+        border-radius: 50%;
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        transition: 0.3s;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .switch.on {
+        background: #2ecc71;
+    }
+
+    .switch.on .switch-circle {
+        left: 22px;
+    }
+
+</style>
+</head>
+
+<body>
+
+<div class="phone">
+
+    <div class="header">
+        <!-- ✔ Navegación atrás -->
+        <div class="back-btn" onclick="window.location.href='perfil_usuario.html'">←</div>
+        Ajustes
+    </div>
+
+    <div class="content">
+
+        <!-- Sección Preferencias -->
+        <div class="section-title">Preferencias</div>
+
+        <div class="setting-item">
+            <div class="label"><span class="icon">🔔</span> Notificaciones</div>
+            <div class="switch on"><div class="switch-circle"></div></div>
+        </div>
+
+        <div class="setting-item">
+            <div class="label"><span class="icon">📳</span> Vibración</div>
+            <div class="switch"><div class="switch-circle"></div></div>
+        </div>
+
+        <div class="setting-item">
+            <div class="label"><span class="icon">🌙</span> Modo oscuro</div>
+            <div class="switch"><div class="switch-circle"></div></div>
+        </div>
+
+        <!-- Sección App -->
+        <div class="section-title">Aplicación</div>
+
+        <div class="setting-item">
+            <div class="label"><span class="icon">🌐</span> Idioma</div>
+            <span>Español ›</span>
+        </div>
+
+        <div class="setting-item">
+            <div class="label"><span class="icon">🔒</span> Privacidad</div>
+            <span>›</span>
+        </div>
+
+        <div class="setting-item">
+            <div class="label"><span class="icon">❓</span> Ayuda y soporte</div>
+            <span>›</span>
+        </div>
+
+        <div class="setting-item">
+            <div class="label"><span class="icon">ℹ️</span> Acerca de EcoLink</div>
+            <span>›</span>
+        </div>
+
+        <!-- Cerrar sesión -->
+        <div class="section-title">Cuenta</div>
+
+        <div class="setting-item" onclick="window.location.href='login.html'">
+            <div class="label"><span class="icon">🚪</span> Cerrar sesión</div>
+            <span>›</span>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home Fusion - EcoLink</title>
+
+<style>
+    body {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: #e8fdf3;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .phone {
+        width: 320px;
+        height: 620px;
+        background: #ffffff;
+        border-radius: 28px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.22);
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+
+    .notch {
+        width: 140px;
+        height: 26px;
+        background: #111;
+        border-radius: 0 0 18px 18px;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+    }
+
+    .header {
+        background: #f6fff9;
+        padding: 20px 18px 14px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        margin-top: 20px;
+        text-align: left;
+    }
+
+    .header h2 {
+        font-size: 1.25rem;
+        color: #145a32;
+    }
+
+    .header p {
+        font-size: 0.85rem;
+        color: #4b4b4b;
+        margin-top: 4px;
+    }
+
+    .content {
+        flex: 1;
+        overflow-y: auto;
+        padding: 18px;
+    }
+
+    .points-card {
+        background: #2ecc71;
+        color: white;
+        border-radius: 18px;
+        padding: 18px;
+        box-shadow: 0 4px 14px rgba(46,204,113,0.35);
+        text-align: center;
+        margin-bottom: 16px;
+    }
+
+    .points-card .points {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-top: 6px;
+    }
+
+    .card {
+        background: white;
+        padding: 14px;
+        border-radius: 16px;
+        margin-top: 14px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+        text-align: center;
+        border: 1px solid #c8f3dd;
+    }
+
+    .card h3 {
+        font-size: 1rem;
+        color: #0b5345;
+        margin-bottom: 6px;
+    }
+
+    .metrics {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin-top: 10px;
+    }
+
+    .metric-box {
+        background: #f0fff4;
+        padding: 10px;
+        border-radius: 12px;
+        border: 1px solid #d3f9d8;
+    }
+
+    .metric-box strong {
+        font-size: 1rem;
+        color: #0b501f;
+    }
+
+    .metric-box span {
+        font-size: 0.72rem;
+        color: #55665e;
+    }
+
+    .menu-grid {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 12px;
+        margin-top: 20px;
+    }
+
+    .menu-btn {
+        background:#f4fff9;
+        border:1px solid #c6f5df;
+        border-radius:14px;
+        padding:12px 6px;
+        cursor:pointer;
+        transition:.2s;
+        font-size:0.82rem;
+        font-weight:600;
+        color:#145a32;
+    }
+
+    .menu-btn:hover {
+        background:#e5ffef;
+        border-color:#2ecc71;
+    }
+
+    .map-btn {
+        margin-top: 22px;
+        background: #2ecc71;
+        color: white;
+        padding: 12px;
+        border-radius: 12px;
+        font-weight: 600;
+        cursor: pointer;
+        box-shadow: 0 4px 10px rgba(46, 204, 113, 0.28);
+        text-align: center;
+    }
+
+    .fab {
+        width: 56px;
+        height: 56px;
+        background: #1abc9c;
+        border-radius: 50%;
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 28px;
+        cursor: pointer;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.24);
+    }
+
+    .info-card {
+        background:#eafff1;
+        border-radius:14px;
+        border:1px solid #b6efcf;
+        padding:12px;
+        margin-top:16px;
+        font-size:0.83rem;
+        color:#0f5132;
+        text-align:left;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="phone">
+    <div class="notch"></div>
+
+    <div class="header">
+        <h2>Hola, Sarmiento 👋</h2>
+        <p>Gracias por seguir reciclando, ¡vas excelente! 🌱</p>
+    </div>
+
+    <div class="content">
+
+        <div class="points-card">
+            <h3>Tus puntos</h3>
+            <div class="points">120</div>
+        </div>
+
+        <div class="card">
+            <h3>Impacto ecológico</h3>
+            <div class="impact-value">4.8 kg CO₂ evitado</div>
+
+            <div class="metrics">
+                <div class="metric-box">
+                    <strong>3.4 kg</strong>
+                    <span>Reciclados</span>
+                </div>
+
+                <div class="metric-box">
+                    <strong>70%</strong>
+                    <span>Energía ahorrada</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-grid">
+            <div class="menu-btn">♻ Reciclar</div>
+            <div class="menu-btn">📍 Centros</div>
+            <div class="menu-btn">🎁 Recompensas</div>
+        </div>
+
+        <div class="map-btn">🔎 Buscar centros de acopio</div>
+
+        <div class="info-card">
+            🌎 El reciclaje de PET ahorra hasta 70% de energía frente a producir plástico nuevo.
+        </div>
+
+    </div>
+
+    <div class="fab">+</div>
+</div>
+
+</body>
+</html>
