@@ -6,41 +6,29 @@
 <title>EcoLink - Splash</title>
 
 <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
-        margin: 0;
         height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
-        background: #e8fdf3;
+        background: #dfffee;
         font-family: 'Poppins', sans-serif;
     }
 
-    /* Lienzo tipo celular */
+    /* Contenedor tipo teléfono */
     .phone {
-        width: 300px;
-        height: 600px;
-        background: white;
-        border-radius: 30px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        width: 360px;
+        height: 640px;
+        background: #000; /* APAGADO */
+        border-radius: 28px;
+        box-shadow: 0 12px 28px rgba(0,0,0,0.22);
         overflow: hidden;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         position: relative;
     }
 
-    /* Notch superior
-    .notch {
-        width: 160px;
-        height: 28px;
-        background: #111;
-        border-radius: 0 0 20px 20px;
-        position: absolute;
-        top: 0;
-    } */
-
-    /* Pantalla splash */
+    /* Splash real (oculto al inicio) */
     .splash {
         width: 100%;
         height: 100%;
@@ -51,41 +39,43 @@
         align-items: center;
         color: white;
         text-align: center;
+        opacity: 0;
     }
 
-    /* Logo circular */
+    /* Logo */
     .logo {
         width: 110px;
         height: 110px;
         border-radius: 50%;
         background: radial-gradient(circle at 30% 30%, #ffffff, #a3ffcd, #20c77a);
-        box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.25);
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 40px;
+        font-size: 42px;
         font-weight: bold;
         color: #0f5132;
     }
 
     h1 {
         margin-top: 20px;
-        font-size: 1.4rem;
+        font-size: 1.5rem;
+        font-weight: 600;
     }
 
     p {
-        margin-top: 5px;
+        margin-top: 6px;
         font-size: 0.9rem;
-        opacity: 0.9;
+        opacity: 0.95;
     }
 
     /* Animación fade-in */
     .fade-in {
-        animation: fade 2.2s ease-out;
+        animation: fade 2s ease-out forwards;
     }
 
     @keyframes fade {
-        0% { opacity: 0; transform: scale(0.95); }
+        0% { opacity: 0; transform: scale(0.96); }
         100% { opacity: 1; transform: scale(1); }
     }
 </style>
@@ -93,22 +83,30 @@
 
 <body>
 
-<div class="phone">
-    <!-- <div class="notch"></div> -->
+<div class="phone" id="phoneScreen">
 
-    <div class="splash fade-in">
+    <!-- Pantalla splash -->
+    <div class="splash" id="splashScreen">
         <div class="logo">♻</div>
-
         <h1>EcoLink</h1>
         <p>Reciclar es fácil. Recompensarte también.</p>
     </div>
+
 </div>
 
-<!-- Navegación: ir a login.html después del splash -->
 <script>
+    // 1) Mostrar pantalla negra = teléfono apagado (0.8s)
+    setTimeout(() => {
+        const splash = document.getElementById("splashScreen");
+        
+        // 2) "Encender" y mostrar animación del splash
+        splash.classList.add("fade-in");
+    }, 800);
+
+    // 3) Ir a login después del splash real
     setTimeout(() => {
         window.location.href = "login.html";
-    }, 2500); 
+    }, 3200); // 0.8s apagado + 2.4s splash
 </script>
 
 </body>
